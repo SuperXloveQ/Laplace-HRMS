@@ -1,16 +1,14 @@
-import globals from "globals";
-import pluginJs from "@eslint/js";
-import pluginVue from "eslint-plugin-vue";
-import someConfig from "some-other-config-you-use";
-import eslintConfigPrettier from "eslint-config-prettier";
+import globals from 'globals';
+import pluginJs from '@eslint/js';
+import pluginVue from 'eslint-plugin-vue';
+import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended';
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
-  { files: ["**/*.{js,mjs,cjs,vue}"] },
-  { files: ["**/*.js"], languageOptions: { sourceType: "commonjs" } },
+  // Any other config imports go at the top
+  { files: ['**/*.{js,mjs,cjs,vue}'] },
   { languageOptions: { globals: globals.browser } },
   pluginJs.configs.recommended,
-  ...pluginVue.configs["flat/essential"],
-  someConfig,
-  eslintConfigPrettier,
+  ...pluginVue.configs['flat/essential'],
+  eslintPluginPrettierRecommended,
 ];
