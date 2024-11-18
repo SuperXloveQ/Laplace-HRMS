@@ -4,6 +4,7 @@ import GlobalHeader from './components/GlobalHeader.vue'
 
 <template>
 	<GlobalHeader />
+	<RouterView />
 </template>
 
 <style scoped></style>
